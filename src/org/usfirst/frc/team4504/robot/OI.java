@@ -4,14 +4,12 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 
 import org.usfirst.frc.team4504.robot.commands.Agitate;
-import org.usfirst.frc.team4504.robot.commands.AutoRightShoot;
 import org.usfirst.frc.team4504.robot.commands.ClimberUp;
 import org.usfirst.frc.team4504.robot.commands.Shoot;
 import org.usfirst.frc.team4504.robot.commands.ShootPowerAdd;
 import org.usfirst.frc.team4504.robot.commands.ShootPowerReset;
 import org.usfirst.frc.team4504.robot.commands.ShootPowerSubtract;
 import org.usfirst.frc.team4504.robot.commands.StopEverything;
-//import org.usfirst.frc.team4504.robot.commands.autonomous.test;
 import org.usfirst.frc.team4504.robot.commands.DriveTrainStop;
 import org.usfirst.frc.team4504.robot.commands.DriveWithMecanum;
 import org.usfirst.frc.team4504.robot.commands.IntakeForward;
@@ -70,7 +68,7 @@ public class OI {
 		shootPowerReset.whenPressed(new ShootPowerReset());
 		
 		manualShooter.toggleWhenPressed(new Shoot());
-		autoRightShooter.toggleWhenPressed(new AutoRightShoot());
+		//autoRightShooter.toggleWhenPressed(new AutoRightShoot());
 		
 		climberUp.toggleWhenPressed(new ClimberUp());
 	}
