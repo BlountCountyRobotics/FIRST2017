@@ -41,10 +41,7 @@ public class OI {
 	
 	private JoystickButton manualAgitator = new JoystickButton(driverStation, RobotMap.topRight);
 	
-	//public JoystickButton autoLeftShooter = new JoystickButton(driverStation, RobotMap.middleLeft);
 	private JoystickButton manualShooter = new JoystickButton(driverStation, RobotMap.middleMiddle);
-	public JoystickButton autoRightShooter = new JoystickButton(driverStation, RobotMap.middleRight);
-	
 	private JoystickButton shootPowerAdd = new JoystickButton(driverStation, RobotMap.bottomLeft);
 	private JoystickButton shootPowerSubtract = new JoystickButton(driverStation, RobotMap.bottomMiddle);
 	private JoystickButton shootPowerReset = new JoystickButton(driverStation, RobotMap.middleLeft);
@@ -60,15 +57,12 @@ public class OI {
 		ballReverse.whileHeld(new IntakeReverse());
 		
 		manualAgitator.toggleWhenPressed(new Agitate());
-		//pidtest.toggleWhenPressed(new test());
 		stopEVERYTHING.whenPressed(new StopEverything());
 		
 		shootPowerAdd.whenPressed(new ShootPowerAdd(2.5));
 		shootPowerSubtract.whenPressed(new ShootPowerSubtract(2.5));
-		shootPowerReset.whenPressed(new ShootPowerReset());
-		
+		shootPowerReset.whenPressed(new ShootPowerReset());		
 		manualShooter.toggleWhenPressed(new Shoot());
-		//autoRightShooter.toggleWhenPressed(new AutoRightShoot());
 		
 		climberUp.toggleWhenPressed(new ClimberUp());
 	}
