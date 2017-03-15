@@ -19,7 +19,7 @@ public class TurnToGears extends Command {
     	requires(Robot.gyroAngle);
     	this.isLeft = isLeft;
     }
-    public TurnToGears()
+    public TurnToGears() 
     {
     	requires(Robot.driveTrain);
     	requires(Robot.gyroAngle);
@@ -45,9 +45,6 @@ public class TurnToGears extends Command {
     	{
     		Robot.gyroAngle.setSetpoint(60.0);
     	}
-		//SmartDashboard.putNumber("setPoint:GyroAngle", Robot.gyroAngle.getSetpoint());
-
-    	//Robot.gyroAngle.setAbsoluteTolerance(3.0);
     }
 
     // Make this return true when this Command no longer needs to run execute()

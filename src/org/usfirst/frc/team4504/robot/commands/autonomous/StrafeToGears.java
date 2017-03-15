@@ -26,12 +26,7 @@ public class StrafeToGears extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	Robot.driveTrain.stop();
-    	//withoutVision = true;
-    	//firstPIDRun = true;
-    	//Robot.autoStrafe.disable();
 		Robot.gearStrafe.enable();
-		//Robot.driveTrain.invert(true);
-    	//Robot.autoStrafe.setSetpoint(0.0);
     	Robot.gearStrafe.setInchSetpoint(setpoint); // get inches from center of gear mechanism
     }
 
@@ -47,7 +42,6 @@ public class StrafeToGears extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	//SmartDashboard.putBoolean("withoutVision", withoutVision);
         	return Robot.gearStrafe.onTarget() || kill;
     }
 
@@ -55,7 +49,6 @@ public class StrafeToGears extends Command {
     protected void end() {
     	Robot.gearStrafe.disable();
     	Robot.driveTrain.stop();
-    	//Robot.driveTrain.invert(false);
     }
 
     // Called when another command which requires one or more of the same
@@ -63,6 +56,5 @@ public class StrafeToGears extends Command {
     protected void interrupted() {
     	Robot.gearStrafe.disable();
     	Robot.driveTrain.stop();
-    	//Robot.driveTrain.invert(false);
     }
 }

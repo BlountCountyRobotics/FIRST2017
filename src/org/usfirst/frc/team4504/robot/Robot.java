@@ -73,15 +73,7 @@ public class Robot extends IterativeRobot {
 		NetworkTable.setServerMode();
 		NetworkTable.initialize();
 		visionTable = NetworkTable.getTable("visionTable");
-		//SmartDashboard.putBoolean("isConnected()", visionTable.isConnected());
-		//SmartDashboard.putNumber("asdf", visionTable.getNumber("gearDistance", 0.0));
 		oi = new OI();
-		//SmartDashboard.putNumber("kp", .2);
-		//SmartDashboard.putNumber("ki", .2);
-		//SmartDashboard.putNumber("kd", .2);
-		//SmartDashboard.putNumber("outputRange", .3);
-		//SmartDashboard.putNumber("TestingPeriodGA", 1.0);
-		//SmartDashboard.putNumber("shootPower", .6);
 		autoCommand.addObject("Middle", new AutoMiddle());
 		autoCommand.addObject("Right", new AutoRight());
 		autoCommand.addObject("Left", new AutoLeft());
@@ -91,13 +83,10 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putData(shooter);
 		SmartDashboard.putData(intake);
 		SmartDashboard.putData(agitator);
-		//SmartDashboard.putData(autoStrafe);
 
 		
 		SmartDashboard.putData("Autonomous mode", autoCommand);
-		//driveTrain.gyro.setSensitivity(RobotMap.gyroSensitivity);
 		driveTrain.gyro.calibrate();
-		//CameraServer.getInstance().addAxisCamera("http://10.45.4.15");
 	}
 
 	
@@ -130,25 +119,12 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		//autonomousCommand = chooser.getSelected();
-
-		/*
-		 * String autoSelected = SmartDashboard.getString("Auto Selector",
-		 * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
-		 * = new MyAutoCommand(); break; case "Default Auto": default:
-		 * autonomousCommand = new ExampleCommand(); break; }
-		 */
 		Command auto = autoCommand.getSelected();
 		if(auto != null)
 		{
 			auto.start();
 		}
-//		//Command auto = new TestAuto();
-		//auto.start();
 		driveTrain.gyro.reset();
-		// schedule the autonomous command (example)
-		//if (autonomousCommand != null)
-		//	autonomousCommand.start();
 	}
 
 	/**
@@ -162,20 +138,6 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void teleopInit() {
-		// This makes sure that the autonomous stops running when
-		// teleop starts running. If you want the autonomous to
-		// continue until interrupted by another command, remove
-		// this line or comment it out.
-		//if (autonomousCommand != null)
-		//	autonomousCommand.cancel();
-		/*SmartDashboard.putBoolean("GearIsFound", jetsonCommunication.gears.isFound);
-		SmartDashboard.putBoolean("BoilerIsFound", jetsonCommunication.boiler.isFound);
-		SmartDashboard.putNumber("GearDistance", jetsonCommunication.gears.distance);
-		SmartDashboard.putNumber("GearAngle", jetsonCommunication.gears.angle);
-		SmartDashboard.putNumber("BoilerDistance", jetsonCommunication.boiler.angle);
-		SmartDashboard.putNumber("BoilerAngle", jetsonCommunication.boiler.angle);*/
-		//Robot.driveTrain.gyro.reset();
-		//Robot.driveTrain.gyro.calibrate();
 	}
 
 	/**

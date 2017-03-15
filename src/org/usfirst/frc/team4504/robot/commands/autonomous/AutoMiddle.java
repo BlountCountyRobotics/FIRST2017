@@ -12,9 +12,6 @@ public class AutoMiddle extends CommandGroup {
 
     public AutoMiddle() {
     	
-    	//addSequential(new TurnToGears());
-    	//addSequential(new StrafeToGears());
-    	//addSequential(new ApproachGears());
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

@@ -9,7 +9,6 @@ import org.usfirst.frc.team4504.robot.RobotMap;
 import edu.wpi.first.wpilibj.AnalogGyro;
 */
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -41,7 +40,6 @@ public class GyroAngle extends PIDSubsystem {
 		}else
 		{
 			setOutputRange(-.3,.3);
-			//this.getPIDController().setPID(SmartDashboard.getNumber("kp", .1), SmartDashboard.getNumber("ki", .1), SmartDashboard.getNumber("kd", .1)); // empirically set
 			this.getPIDController().setPID(0.1,0.1,0.1,0.1); //P,I,D,Period
 		}
 	}
@@ -80,7 +78,6 @@ public class GyroAngle extends PIDSubsystem {
     		Robot.driveTrain.setPIDCurve(output);
     	}else
     	{
-    		SmartDashboard.putNumber("output: ", output);
     		Robot.driveTrain.turn(output);
     	}
     }

@@ -28,15 +28,6 @@ public class ApproachGears extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	Robot.driveTrain.stop();
-    	
-    	
-    	/*Robot.visionAngle.setSetpoint(0.0);
-    	Robot.gearDistance.setSetpoint(0.0);
-    	Robot.visionAngle.enable();
-    	Robot.gearDistance.enable();*/
-    	//t.visionAngle.getFinalGyro());
-    	//Robot.gyroAngle.isCurveOnly(true);
-    	//Robot.gyroAngle.enable();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -46,8 +37,6 @@ public class ApproachGears extends Command {
     	{
     		kill = true;
     	}
-    	//Robot.driveTrain.setPIDOutputMagnitude(.2);
-    	//Robot.driveTrain.pidExecute();
     }
 
     // Make this return true when this Command no longer needs to run execute()

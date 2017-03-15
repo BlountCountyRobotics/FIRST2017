@@ -59,12 +59,10 @@ public class DriveTrain extends Subsystem {
 	}
 	public void turn(double input)
 	{
-		//robotDrive.setLeftRightMotorOutputs(input, -input);
 		robotDrive.mecanumDrive_Cartesian(0.0, 0.0, input, 0.0);
 	}
 	public void goForward(double input)
 	{
-		//robotDrive.drive(input, 0.0);
 		robotDrive.mecanumDrive_Cartesian(0.0, -input, 0.0, 0.0);
 	}
 	public void goForward(double input, double curve)
@@ -94,9 +92,7 @@ public class DriveTrain extends Subsystem {
 		rearLeftMotor.set(-outputMagnitude * .9);
 		frontLeftMotor.set(outputMagnitude);
 		rearRightMotor.set(outputMagnitude * .8);
-		//rearRightMotor.set(outputMagnitude * .9);
 		frontRightMotor.set(-outputMagnitude);
-		//robotDrive.mecanumDrive_Cartesian(outputMagnitude, 0.0, 0.0, 0.0);
 	}
 	public void autoStrafe(double outputMagnitude, double curve)
 	{
