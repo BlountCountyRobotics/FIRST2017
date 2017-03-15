@@ -10,6 +10,7 @@ import org.usfirst.frc.team4504.robot.Robot;
 public class DriveWithMecanum extends Command {
 
 	boolean usingGyro = false;
+	
     public DriveWithMecanum(boolean usingGyro) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
